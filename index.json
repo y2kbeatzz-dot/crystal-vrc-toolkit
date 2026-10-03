@@ -1,0 +1,34 @@
+{
+  "name": "Crystal VRC Toolkit",
+  "id": "dev.crystal.vrc-toolkit.repository",
+  "author": {
+    "name": "Crystal",
+    "email": "269330001+y2kbeatzz-dot@users.noreply.github.com",
+    "url": "https://github.com/y2kbeatzz-dot"
+  },
+  "url": "https://raw.githubusercontent.com/y2kbeatzz-dot/crystal-vrc-toolkit/vpm/index.json",
+  "packages": {
+    "dev.crystal.vrc-toolkit": {
+      "versions": {
+        "1.1.0": {
+          "name": "dev.crystal.vrc-toolkit",
+          "version": "1.1.0",
+          "displayName": "Crystal VRC Toolkit",
+          "description": "A unified VRChat creator tool hub with favorites, official repository links and selected hierarchy diagnostics.",
+          "unity": "2022.3",
+          "author": {
+            "name": "Crystal",
+            "email": "269330001+y2kbeatzz-dot@users.noreply.github.com",
+            "url": "https://github.com/y2kbeatzz-dot"
+          },
+          "license": "MIT",
+          "dependencies": {},
+          "vpmDependencies": {},
+          "url": "https://github.com/y2kbeatzz-dot/crystal-vrc-toolkit/releases/download/v1.1.0/dev.crystal.vrc-toolkit-1.1.0.zip",
+          "repo": "https://raw.githubusercontent.com/y2kbeatzz-dot/crystal-vrc-toolkit/vpm/index.json",
+          "zipSHA256": "0470cb45aa8500298b68a5ff973d3801cec7e983b06a0b7fd03427f974a670f6"
+        }
+      }
+    }
+  }
+}
