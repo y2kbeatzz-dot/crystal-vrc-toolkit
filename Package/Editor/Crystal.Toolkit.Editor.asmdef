@@ -1,0 +1,9 @@
+{
+  "name": "Crystal.Toolkit.Editor",
+  "rootNamespace": "Crystal.VRCToolkit",
+  "references": [],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "autoReferenced": true
+}

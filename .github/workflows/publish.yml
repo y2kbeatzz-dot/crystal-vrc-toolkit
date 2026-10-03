@@ -1,0 +1,57 @@
+name: Publish VPM Repository
+on:
+  push:
+    branches: [main]
+    paths: ['Package/**', 'scripts/**', '.github/workflows/publish.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: vpm-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Load published version history
+        run: |
+          if git show-ref --verify --quiet refs/remotes/origin/vpm; then
+            git show origin/vpm:index.json > previous-index.json
+          fi
+      - name: Build package and repository listing
+        id: build
+        run: python3 scripts/build_repository.py
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.build.outputs.version }}
+          ASSET: ${{ steps.build.outputs.asset }}
+        run: |
+          if gh release view "v$VERSION" >/dev/null 2>&1; then
+            mkdir -p published
+            gh release download "v$VERSION" --pattern "$ASSET" --dir published
+            cmp "dist/$ASSET" "published/$ASSET"
+          else
+            gh release create "v$VERSION" "dist/$ASSET" --target "$GITHUB_SHA" --title "Crystal VRC Toolkit $VERSION" --notes "Install or update through the Crystal VRC Toolkit VPM repository."
+          fi
+      - name: Publish listing branch
+        run: |
+          mkdir -p /tmp/crystal-vpm
+          cp dist/index.json /tmp/crystal-vpm/index.json
+          cd /tmp/crystal-vpm
+          git init -b vpm
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git remote add origin "$GITHUB_WORKSPACE"
+          if git fetch origin vpm; then
+            git reset --soft FETCH_HEAD
+          fi
+          git add index.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Update VPM package listing'
+          git push "$GITHUB_WORKSPACE" HEAD:refs/heads/vpm
+          cd "$GITHUB_WORKSPACE"
+          git push origin vpm:vpm

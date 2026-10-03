@@ -1,0 +1,24 @@
+.crystal-root { background-color: #10121c; color: #edf0ff; flex-grow: 1; }
+.header { padding: 22px; background-color: #191b2e; border-bottom-width: 2px; border-bottom-color: #a48aff; }
+.brand { font-size: 26px; -unity-font-style: bold; color: #c8b7ff; }
+.subtitle { font-size: 12px; color: #69dfd0; margin-top: 4px; }
+.muted { white-space: normal; color: #9ca6c2; margin-top: 12px; margin-bottom: 12px; }
+.body { flex-direction: row; flex-grow: 1; min-height: 0; }
+.nav { width: 155px; flex-shrink: 0; padding: 10px; background-color: #151725; }
+.nav-button { background-color: #22263c; color: #edf0ff; height: 34px; margin-bottom: 6px; border-radius: 7px; border-width: 0; -unity-text-align: middle-left; padding-left: 10px; }
+.nav-button:hover { background-color: #514077; }
+.content { flex-grow: 1; padding: 18px; min-width: 0; }
+.page-title { font-size: 23px; -unity-font-style: bold; margin-bottom: 14px; }
+.grid { flex-direction: row; flex-wrap: wrap; }
+.card { width: 280px; flex-grow: 1; margin: 6px; padding: 16px; background-color: #20243a; border-radius: 12px; border-width: 1px; border-color: #393e5a; }
+.card-title { font-size: 19px; -unity-font-style: bold; margin-top: 7px; margin-bottom: 9px; white-space: normal; }
+.tag { color: #72e3d4; font-size: 10px; }
+.description { white-space: normal; color: #c3cae0; margin-bottom: 16px; }
+.status { color: #c2afff; margin-bottom: 12px; white-space: normal; }
+.actions { flex-direction: row; flex-wrap: wrap; }
+.action { background-color: #353b5a; color: #edf0ff; min-height: 29px; padding: 5px 10px; margin: 3px; border-width: 0; border-radius: 6px; white-space: normal; }
+.action:hover { background-color: #62518b; }
+.action:active { background-color: #7866a3; }
+ScrollView { flex-grow: 1; min-height: 0; }
+TextField { margin-bottom: 10px; }
+.report { white-space: normal; color: #d2def1; margin-top: 15px; }
