@@ -1,27 +1,31 @@
 # Crystal VRC Toolkit
 
-A purple-and-teal Unity editor workspace for VRChat creators. Includes 23 tool/source cards, favorites, selected-hierarchy checks, material assignment editing and blendshape controls with Undo.
+**A creator workspace for VRChat, inside Unity.**
 
-## Install through VCC or ALCOM
+Crystal VRC Toolkit brings useful avatar and world resources together with hands-on editing utilities, so you can spend less time searching and more time creating.
 
-After the first successful Publish VPM Repository workflow run, add:
+## What’s inside
 
-`https://raw.githubusercontent.com/y2kbeatzz-dot/crystal-vrc-toolkit/vpm/index.json`
+- **Tool hub:** 23 official tool/source entries, searchable categories and favorites.
+- **Avatar and world resources:** Modular Avatar, VRCFury, Gesture Manager, VRCQuestTools, AudioLink, lighting tools and more.
+- **Materials:** view renderer slots and change material assignments with Undo.
+- **Blendshapes:** adjust scene-renderer weights with Undo.
+- **Project checks:** inspect a selected hierarchy for missing scripts, meshes, materials, shader problems and basic rig issues.
+- **Quick actions:** shortcuts to the SDK panel, Console and Package Manager.
+- **VCC / ALCOM distribution:** install and receive published updates through the repository.
 
-Then manage your project and add **Crystal VRC Toolkit**. Open Unity and choose **Tools → Crystal VRC Toolkit → Open Hub**.
+## Get started
 
-For an existing local installation, close Unity and move `Packages/dev.crystal.vrc-toolkit` or `Assets/CrystalVRC-Toolkit` outside the project before adding the managed package. Keep a backup. Do not install both copies.
+[Open the install page](https://crystal-vrc-toolkit-install.xqv5xwnjjq.chatgpt.site) · [Installation & user guide](HOW-TO.md) · [Releases](https://github.com/y2kbeatzz-dot/crystal-vrc-toolkit/releases)
 
-## First publication
+## Compatibility and scope
 
-Create a public GitHub repository named `crystal-vrc-toolkit` under `y2kbeatzz-dot`, and commit this folder's contents on `main` (include `.github`). The workflow publishes the package as a GitHub release and the VPM listing on branch `vpm`. GitHub Pages is not required. No deploy keys, external hosting or third-party secrets are needed.
+Built for Unity 2022.3. Editor-only: it does not add runtime components to your uploaded avatar. Community tools install separately from their official sources; their code and paid assets are not bundled. Toolkit diagnostics supplement the official VRChat SDK checks. They do not certify upload readiness or mobile compatibility.
 
-## Updates
+## Credits
 
-Edit the source under `Package`, bump its semantic version in `Package/package.json`, and commit to `main`. Existing versions stay in the feed. Published package bytes cannot be changed without a version bump.
+Made by **Crystal**. All linked tools belong to their respective authors; their official pages are linked in the hub and [user guide](HOW-TO.md#official-tool-links).
 
-## Status
+## License
 
-User confirmed v1.1.0 imports and works in Unity. Package and feed generation are checked locally. Hosted publication must still be verified after creating the repository.
-
-Community tools belong to their authors. This repository distributes only Crystal's hub code and official links, not the third-party tool code. See each tool's official documentation for licensing, dependencies and installation.
+Crystal’s toolkit code is available under the [MIT License](LICENSE.md). Linked tools retain their own licenses.
